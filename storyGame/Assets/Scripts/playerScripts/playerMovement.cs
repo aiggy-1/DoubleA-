@@ -51,7 +51,7 @@ public class playerMovement : MonoBehaviour
     void movePlayer()
     {
         moveDir= ori.forward*vertInput + ori.right*horiInput;
-        rb.AddForce(moveDir * speed*10f, ForceMode.Force);
+        transform.position += moveDir * speed;
     }
     
 }
