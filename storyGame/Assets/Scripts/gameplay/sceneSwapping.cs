@@ -24,22 +24,24 @@ public class sceneSwapping : MonoBehaviour
 
    public void returnToMain()
     {
-         
-    }
-   public void enterSchool()
-    {
+        SceneManager.LoadScene("mainMenu");
 
+    }
+    public void enterSchool()
+    {
+        SceneManager.LoadScene("school");
     }
     public void enterApartment()
     {
-
+        SceneManager.LoadScene("apartment");
     }
-        
+
     public void exitToCourtyard()
     {
+        SceneManager.LoadScene("SampleScene");
 
     }
-     void openEscapeMenu()
+    void openEscapeMenu()
     {
         cursorActive = !cursorActive;
             panelActive = !panelActive;
