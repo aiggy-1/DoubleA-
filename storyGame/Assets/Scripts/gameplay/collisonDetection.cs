@@ -3,19 +3,30 @@ using UnityEngine;
 public class collisonDetection : MonoBehaviour
 {
     public sceneSwapping sceneSwap;
-
+    bool canEnterSchool;
     void Start()
     {
-     //   sceneSwap= GetComponent<sceneSwapping>();
+        //   sceneSwap= GetComponent<sceneSwapping>();
+        
+    }
+    void Update()
+    {
+        if (canEnterSchool)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                sceneSwap.enterSchool();
+            }
+        }
     }
     
    void OnTriggerEnter(Collider c)
     {
         if (c.CompareTag("gate"))
         {
-            if (Input.GetKeyDown(KeyCode.E)) { 
-            sceneSwap.enterSchool();
-        }
+            Debug.Log("Touching Gate");
+            canEnterSchool = true;
+            
         }
     }
 }
