@@ -4,6 +4,11 @@ using TMPro;
 public class pointSystem : MonoBehaviour
 {
 
+    //is game logic following like (current Task-- go to class, interact w/ something then task changes
+    //then just like a couple of other things then school day ends? and then like idk she exits the school and
+    //has a final dialog with who ever she had the most points with 
+    //ends with them walk away or something? 
+
     
     //floats for point addition and deduction
     float minorDeduction = -1.0f; 
@@ -22,7 +27,7 @@ public class pointSystem : MonoBehaviour
     int selectedOption;
    
     //ppl interaction functions 
-   void checkPointAmt()
+   float checkPointAmt()
     {
 
         if (goodChoice)
@@ -41,7 +46,7 @@ public class pointSystem : MonoBehaviour
             {
                 pointToCalc -= majorDeduction;
             }
-
+return pointToCalc;
         
     }
 
@@ -72,12 +77,24 @@ public class pointSystem : MonoBehaviour
     }
 
 
-    //this method is for the interactable items
-    void AddPoint()
+  //selected option parameter corresponds with who player is talking to
+  //set selected option at the beginning of interaction 
+    void AddToPerson(int selectedOption)
     {
-       // switch()
+        switch (selectedOption)
+        {
+            case 0:
+                nerdTotalPoints += pointToCalc;
+                break;
+        case 1:
+                jockTotalPoints += pointToCalc;
+        break;
+                case 2:
+                bBoyTotalPoints += pointToCalc;
+                break ;
+        }
     }
 
 
-    //item interaction functions
+   
 }

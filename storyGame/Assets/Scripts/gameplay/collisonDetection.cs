@@ -8,6 +8,7 @@ public class collisonDetection : MonoBehaviour
     public Button bt; 
     bool canEnterSchool;
     bool canEnterYard;
+    bool canEnterHome;
     bool PanelActive; 
     void Start()
     {
@@ -23,12 +24,16 @@ public class collisonDetection : MonoBehaviour
                 sceneSwap.enterSchool();
             }
         }
-        else if(canEnterYard)
+        else if (canEnterYard)
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
                 sceneSwap.exitToCourtyard();
             }
+        }
+        else if (canEnterHome)
+        {
+            sceneSwap.enterApartment();
         }
         if (PanelActive && Input.GetKeyDown(KeyCode.Space))
         {
@@ -48,6 +53,10 @@ public class collisonDetection : MonoBehaviour
         {
             Debug.Log("Touching Door");
             canEnterYard = true;    
+        }
+        if (c.CompareTag("home"))
+        {
+            canEnterHome = true;
         }
         if (c.CompareTag("item"))
         {
