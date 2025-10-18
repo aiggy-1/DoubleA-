@@ -7,6 +7,7 @@ public class collisonDetection : MonoBehaviour
     public sceneSwapping sceneSwap;
     public Button bt; 
     bool canEnterSchool;
+    bool canEnterYard;
     bool PanelActive; 
     void Start()
     {
@@ -22,6 +23,13 @@ public class collisonDetection : MonoBehaviour
                 sceneSwap.enterSchool();
             }
         }
+        else if(canEnterYard)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                sceneSwap.exitToCourtyard();
+            }
+        }
         if (PanelActive && Input.GetKeyDown(KeyCode.Space))
         {
             Interactable.nextLine();
@@ -35,6 +43,11 @@ public class collisonDetection : MonoBehaviour
             Debug.Log("Touching Gate");
             canEnterSchool = true;
             
+        }
+        if (c.CompareTag("courtyard"))
+        {
+            Debug.Log("Touching Door");
+            canEnterYard = true;    
         }
         if (c.CompareTag("item"))
         {
