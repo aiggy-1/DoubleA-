@@ -41,6 +41,11 @@ public class playerMovement : MonoBehaviour
     {
         movePlayer();
 
+        if(DialogueManager.GetInstance().dialogueIsPlaying)
+        {
+            return;
+        }
+
     }
 
     void playerInput()
