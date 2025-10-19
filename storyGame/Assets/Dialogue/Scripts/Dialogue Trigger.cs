@@ -3,7 +3,6 @@ using UnityEngine;
 public class DialogueTrigger : MonoBehaviour
 {
     public GameObject VisualCue;
-    public TextAsset inkJSON; 
     private bool InRange;
 
 
@@ -17,12 +16,12 @@ public class DialogueTrigger : MonoBehaviour
 
     private void Update()
     {
-        if (InRange && !DialogueManager.GetInstance().dialogueIsPlaying)
+        if (InRange)
         {
             VisualCue.SetActive(true);
             if (Input.GetKeyDown(KeyCode.I))
             {
-                DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
+               
             }
         }
         else
@@ -30,7 +29,6 @@ public class DialogueTrigger : MonoBehaviour
             VisualCue.SetActive(false);
         }
     }
-
 
 
 
@@ -46,7 +44,7 @@ public class DialogueTrigger : MonoBehaviour
     {
         if(other.gameObject.tag == "Player")
         { 
-            InRange = true;
+            InRange = false;
         }
     }
 
