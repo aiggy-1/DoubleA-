@@ -206,6 +206,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: person 1
       objectReference: {fileID: 0}
+    - target: {fileID: 454147876240216440, guid: 704b3f5cdc31c6847ac1bf4b58148711, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 3384344809887653414, guid: 704b3f5cdc31c6847ac1bf4b58148711, type: 3}
       propertyPath: sceneSwap
       value: 
@@ -344,6 +348,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &447891535 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5566374830172719941, guid: 704b3f5cdc31c6847ac1bf4b58148711, type: 3}
+  m_PrefabInstance: {fileID: 387589353}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce99fe217d5fe9149b5a195da46be216, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::playerMovement
 --- !u!1 &580364689
 GameObject:
   m_ObjectHideFlags: 0
@@ -937,6 +952,7 @@ MonoBehaviour:
   sensX: 300
   sensY: 300
   ori: {fileID: 387589354}
+  stopMovement: {fileID: 447891535}
 --- !u!1 &1487277095
 GameObject:
   m_ObjectHideFlags: 0
@@ -3604,6 +3620,16 @@ MonoBehaviour:
   - {fileID: 7768761497375709849}
   - {fileID: 4357840964187003309}
   - {fileID: 3067179208056618280}
+  stopMovement: {fileID: 0}
+  Nerd: {fileID: 0}
+  nerdheartbreak: NerdHeartBreak
+  nhb: 0
+  Jock: {fileID: 0}
+  jockheartbreak: JockHeartBreak
+  jhb: 0
+  BB: {fileID: 0}
+  bbheartbreak: BBHeartBreak
+  bbhb: 0
 --- !u!222 &6348309652177378305
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4958,8 +4984,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.0010993575, y: 0.0043448545, z: 0.0071744206}
-  m_Center: {x: -0.00017168684, y: -0.009868258, z: 0.0039611375}
+  m_Size: {x: 0.0020321757, y: 0.004344855, z: 0.0071744216}
+  m_Center: {x: -0.00063809595, y: -0.00986826, z: 0.0039611375}
 --- !u!33 &8889373787868789416
 MeshFilter:
   m_ObjectHideFlags: 0
