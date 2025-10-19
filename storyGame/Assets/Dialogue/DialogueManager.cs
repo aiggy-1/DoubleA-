@@ -12,9 +12,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI NameText;
     [SerializeField] private Animator portraitAnimator;
 
-
-
-   [SerializeField] private GameObject[] choices;
+    [SerializeField] private GameObject[] choices;
     private TextMeshProUGUI[] choicesText;
     private Story currentStory;
     public bool dialogueIsPlaying { get; private set; }
@@ -23,7 +21,23 @@ public class DialogueManager : MonoBehaviour
 
     private const string SPEAKER_TAG = "speaker";
     private const string PORTRAIT_TAG = "portrait";
+    private const string FATAL_ERROR = "error";
 
+    public Behaviour stopMovement;
+
+    //-----------------------
+
+    public GameObject Nerd;
+    public string nerdheartbreak = "NerdHeartBreak";
+    public bool nhb = false;
+
+    public GameObject Jock;
+    public string jockheartbreak = "JockHeartBreak";
+    public bool jhb = false;
+
+    public GameObject BB;
+    public string bbheartbreak = "BBHeartBreak";
+    public bool bbhb = false;
 
     private void Awake()
     {
@@ -41,6 +55,7 @@ public class DialogueManager : MonoBehaviour
 
     private void Start()
     {
+
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
 
@@ -64,17 +79,18 @@ public class DialogueManager : MonoBehaviour
         {
             ContinueStory();
         }
+
     }
 
     public void EnterDialogueMode(TextAsset inkJSON)
     {
+        stopMovement.enabled = false;
         currentStory = new Story(inkJSON.text);
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
-
         NameText.text = "???";
         portraitAnimator.Play("default");
-        
+
         ContinueStory();
     }
 
@@ -83,11 +99,14 @@ public class DialogueManager : MonoBehaviour
 
     private IEnumerator ExitDialogueMode()
     {
+        stopMovement.enabled = true;
+
         yield return new WaitForSeconds(0.2f);
 
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
         dialogueText.text = "";
+
     }
 
     public void ContinueStory()
@@ -127,6 +146,24 @@ public class DialogueManager : MonoBehaviour
                 case PORTRAIT_TAG:
                     portraitAnimator.Play(tagValue);
                     break;
+                case FATAL_ERROR:
+                    if (tagValue == nerdheartbreak)
+                    {
+                        Destroy(Nerd);
+                        nhb = true;
+                    }
+                    if (tagValue == jockheartbreak)
+                    {
+                        Destroy(Jock);
+                        jhb = true;
+                    }
+                    if(tagValue == bbheartbreak)
+                    {
+                        Destroy(BB);
+                        bbhb = true;
+                    }
+                    break;
+
                 default:
                     Debug.Log("nope");
                     break;
@@ -135,7 +172,7 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-
+    
 
     private void DisplayChoices()
     {

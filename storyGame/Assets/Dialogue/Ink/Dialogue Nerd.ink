@@ -5,7 +5,7 @@ I havent seen you around before.. I'm Nerd! #speaker:Nerd
 
 === NerdC1 ===
 * [LOSER LOSER LOSER GO BACK TO NERD SCHOOL POINDEXTER LOLLL!!!]
-W- WHATTT WAHHHHHHHH WAHHHHHHH!!!!!!! #portrait:Nerd_Sad
+W- WHATTT WAHHHHHHHH WAHHHHHHH!!!!!!! #portrait:Nerd_Sad #error:NerdHeartBreak
 -> END  
 
 *[Hi! Nice to meet you and yeah It's my first year!]
@@ -18,11 +18,10 @@ Erm actually for your information Im in second year.. heh #portrait:Nerd_Netural
 
 ===Interests===
 First year can be nerve wracking I get it! #portrait:Nerd_Netural
-Sooo erm heh.. small talk! 
 What uhhh what interests do you have? 
 
 * [I like sports unlike you nerd]
-UGH RUDE I AM THE SCHOOLS BEST CHESS PLAYER.. WHICH SHOULD BE CONSIDERED A SPORT!! A AWESOME MENTAL SPORT!! GOOD DAY!  #portrait:Nerd_Happy
+UGH RUDE I AM THE SCHOOLS BEST CHESS PLAYER.. WHICH SHOULD BE CONSIDERED A SPORT!! A AWESOME MENTAL SPORT!! GOOD DAY!  #portrait:Nerd_Happy #error:NerdHeartBreak
 ->END
 
 *[nothing really...I like napping?]

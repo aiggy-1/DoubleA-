@@ -16,6 +16,11 @@ public class pointSystem : MonoBehaviour
     float minorAddition = 1.0f;
     float majorAddition = 3.0f;
 
+    //3 choices so ill change it 
+
+
+
+
    public float nerdTotalPoints; //0--Reid
     public float jockTotalPoints; //1-- idk whatever his name is
     public float bBoyTotalPoints; //2--Alejandro

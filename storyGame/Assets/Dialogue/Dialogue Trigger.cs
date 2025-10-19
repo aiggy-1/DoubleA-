@@ -10,10 +10,20 @@ public class DialogueTrigger : MonoBehaviour
 
     private bool playerInRange;
 
+    public GameObject ObjectAttachedTo;
+
+    private int interactions = 4;
+    public int currentinteractions = 0;
+    // 1st with computer
+    //2-4th boys
+
+
+
     private void Awake()
     {
         playerInRange = false;
         visualCue.SetActive(false);
+        ObjectAttachedTo.SetActive(true);
     }
 
     private void Update()
@@ -24,12 +34,21 @@ public class DialogueTrigger : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
+                ObjectAttachedTo.SetActive(false);
+                currentinteractions += 1;
             }
         }
         else
         {
             visualCue.SetActive(false);
         }
+
+        if (currentinteractions == interactions)
+           {
+            ObjectAttachedTo.SetActive(true);
+            }
+
+
     }
 
     private void OnTriggerEnter(Collider other)
