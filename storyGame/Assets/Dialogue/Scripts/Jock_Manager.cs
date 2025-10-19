@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Nerd_Dialogue : MonoBehaviour
+public class Jock_Manager : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

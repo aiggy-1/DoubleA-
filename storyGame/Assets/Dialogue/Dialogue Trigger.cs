@@ -1,0 +1,51 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class DialogueTrigger : MonoBehaviour
+{
+    [SerializeField] private GameObject visualCue;
+
+    [SerializeField] private TextAsset inkJSON;
+
+    private bool playerInRange;
+
+    private void Awake()
+    {
+        playerInRange = false;
+        visualCue.SetActive(false);
+    }
+
+    private void Update()
+    {
+        if (playerInRange && !DialogueManager.GetInstance().dialogueIsPlaying)
+        {
+            visualCue.SetActive(true);
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
+            }
+        }
+        else
+        {
+            visualCue.SetActive(false);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            playerInRange = true;
+            Debug.Log("yeah..");
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            playerInRange = false;
+        }
+    }
+}

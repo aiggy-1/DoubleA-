@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class playerMovement : MonoBehaviour
 {
-
     public float speed;
     public Transform ori; 
     float horiInput;
@@ -14,7 +13,7 @@ public class playerMovement : MonoBehaviour
     //ground check
     public float playerHeight;
     public LayerMask whatIsGround;
-    bool isGrounded; 
+    bool isGrounded;
 
     void Start()
     {
@@ -53,5 +52,5 @@ public class playerMovement : MonoBehaviour
         moveDir= ori.forward*vertInput + ori.right*horiInput;
         transform.position += moveDir * speed;
     }
-    
+
 }
