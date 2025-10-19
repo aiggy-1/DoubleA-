@@ -9,13 +9,20 @@ public class DialogueManager : MonoBehaviour
 {
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TextMeshProUGUI dialogueText;
+    [SerializeField] private TextMeshProUGUI NameText;
+    [SerializeField] private Animator portraitAnimator;
 
-    [SerializeField] private GameObject[] choices;
+
+
+   [SerializeField] private GameObject[] choices;
     private TextMeshProUGUI[] choicesText;
     private Story currentStory;
     public bool dialogueIsPlaying { get; private set; }
 
     private static DialogueManager instance;
+
+    private const string SPEAKER_TAG = "speaker";
+    private const string PORTRAIT_TAG = "portrait";
 
 
     private void Awake()
@@ -64,6 +71,9 @@ public class DialogueManager : MonoBehaviour
         currentStory = new Story(inkJSON.text);
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
+
+        NameText.text = "???";
+        portraitAnimator.Play("default");
         
         ContinueStory();
     }
@@ -87,12 +97,45 @@ public class DialogueManager : MonoBehaviour
             dialogueText.text = currentStory.Continue();
 
             DisplayChoices();
+
+            HandleTags(currentStory.currentTags);
         }
         else
         {
             StartCoroutine(ExitDialogueMode());
         }
     }
+
+
+    private void HandleTags(List<string> currentTags)
+    {
+        foreach (string tag in currentTags)
+        {
+            string[] spiltTag = tag.Split(':');
+            if (spiltTag.Length != 2)
+            {
+                Debug.Log("error");
+            }
+            string tagKey = spiltTag[0].Trim();
+            string tagValue = spiltTag[1].Trim();
+
+            switch(tagKey)
+            {
+                case SPEAKER_TAG:
+                    NameText.text = tagValue;
+                    break;
+                case PORTRAIT_TAG:
+                    portraitAnimator.Play(tagValue);
+                    break;
+                default:
+                    Debug.Log("nope");
+                    break;
+
+            }
+        }
+    }
+
+
 
     private void DisplayChoices()
     {

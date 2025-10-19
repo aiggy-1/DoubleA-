@@ -46,6 +46,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
   dialoguePanel: {fileID: 0}
   dialogueText: {fileID: 0}
+  NameText: {fileID: 0}
+  portraitAnimator: {fileID: 0}
   choices:
   - {fileID: 0}
   - {fileID: 0}
