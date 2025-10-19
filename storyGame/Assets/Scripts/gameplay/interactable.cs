@@ -8,13 +8,13 @@ public class interactable : MonoBehaviour
     public TMP_Text popUpText;
     int num = 0;
 
-    GameObject temp; 
+    //GameObject temp; 
    
-    void Start()
-    {
-        temp= GameObject.Find("scriptManager");
-        ps=temp.GetComponent<pointSystem>();
-    }
+    //void Start()
+    //{
+    //    temp= GameObject.Find("scriptManager");
+    //    ps=temp.GetComponent<pointSystem>();
+    //}
    public void setText()
     {
         popUpText.text = item.itemDialogue[num];
