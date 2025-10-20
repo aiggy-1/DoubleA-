@@ -3,7 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class sceneSwapping : MonoBehaviour
 {
-
+    public GameObject Managers;
+    public GameObject UI;
     public GameObject pausePanel;
      bool panelActive;
     bool cursorActive = false; 
@@ -30,15 +31,21 @@ public class sceneSwapping : MonoBehaviour
     public void enterSchool()
     {
         SceneManager.LoadScene("school");
+        DontDestroyOnLoad(Managers);
+        DontDestroyOnLoad(UI);
     }
     public void enterApartment()
     {
         SceneManager.LoadScene("apartment");
+        DontDestroyOnLoad(Managers);
+        DontDestroyOnLoad(UI);
     }
 
     public void exitToCourtyard()
     {
         SceneManager.LoadScene("SampleScene");
+        DontDestroyOnLoad(Managers);
+        DontDestroyOnLoad(UI);
 
     }
     void openEscapeMenu()

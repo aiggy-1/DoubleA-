@@ -1,6 +1,6 @@
 H-Hi!
 H-Hey there! #portrait:Nerd_Netural
-I havent seen you around before.. I'm Nerd! #speaker:Nerd
+I havent seen you around before.. I'm Reid! #speaker:Reid
 -> NerdC1
 
 === NerdC1 ===

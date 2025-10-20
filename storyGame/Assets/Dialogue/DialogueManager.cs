@@ -39,6 +39,16 @@ public class DialogueManager : MonoBehaviour
     public string bbheartbreak = "BBHeartBreak";
     public bool bbhb = false;
 
+
+
+    public int talkedto = 0;
+    public GameObject endpanel;
+    public GameObject bNerd;
+    public GameObject bBB;
+    public GameObject bJock;
+    public GameObject bFail;
+
+
     private void Awake()
     {
         if (instance != null)
@@ -55,7 +65,12 @@ public class DialogueManager : MonoBehaviour
 
     private void Start()
     {
+        bFail.SetActive(false);
+        bNerd.SetActive(false);
+        bBB.SetActive(false);
+        bJock.SetActive(false);
 
+        endpanel.SetActive(false);
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
 
@@ -80,10 +95,39 @@ public class DialogueManager : MonoBehaviour
             ContinueStory();
         }
 
+        if (talkedto == 3)
+        {
+            stopMovement.enabled = false;
+            endpanel.SetActive(true);
+
+
+            if (nhb == false)
+            {
+                bNerd.SetActive(true);
+            }
+           
+            if (jhb == false)
+            {
+                bJock.SetActive(true);
+            }
+
+            if (bbhb == false)
+            {
+               bBB.SetActive(true);
+            }
+
+            if (nhb == true && jhb == true && bbhb == true)
+            {
+                bFail.SetActive(true);
+            }
+
+}
+
     }
 
     public void EnterDialogueMode(TextAsset inkJSON)
     {
+        talkedto += 1;
         stopMovement.enabled = false;
         currentStory = new Story(inkJSON.text);
         dialogueIsPlaying = true;
