@@ -315,6 +315,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6c595cad9446bf4881dda4f267b4354, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::sceneSwapping
+  Managers: {fileID: 0}
+  UI: {fileID: 0}
   pausePanel: {fileID: 0}
 --- !u!4 &466218237
 Transform:
@@ -1075,8 +1077,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1, y: 53}
-  m_SizeDelta: {x: 3419.2402, y: 778.3358}
+  m_AnchoredPosition: {x: 1, y: 339.18274}
+  m_SizeDelta: {x: 3419.2402, y: 205.9705}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2020590387
 MonoBehaviour:
@@ -1163,7 +1165,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 518.0376}
+  m_margin: {x: 0, y: 0, z: 0, w: -4.090755}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
