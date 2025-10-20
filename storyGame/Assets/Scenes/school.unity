@@ -44503,6 +44503,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1768866516647605829, guid: 704b3f5cdc31c6847ac1bf4b58148711, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3384344809887653414, guid: 704b3f5cdc31c6847ac1bf4b58148711, type: 3}
       propertyPath: bt
       value: 
@@ -44565,7 +44569,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5566374830172719941, guid: 704b3f5cdc31c6847ac1bf4b58148711, type: 3}
       propertyPath: speed
-      value: 0.5
+      value: 0.38
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
