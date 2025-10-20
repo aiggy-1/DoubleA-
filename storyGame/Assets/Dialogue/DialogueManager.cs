@@ -127,6 +127,7 @@ public class DialogueManager : MonoBehaviour
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
         dialogueText.text = "";
+
         talkedto += 1;
 
         if (talkedto == end)

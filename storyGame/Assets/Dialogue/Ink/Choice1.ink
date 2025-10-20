@@ -8,15 +8,14 @@ Im feeling..->Choices1
  I should probably check my laptop before I go! Mom and Dad will probably want to check
  in before classes!
  ->Choices2
- 
 *[Exhuasted, maybe I should skip the first day to sleep]
 ...Yeah I think I will sleep in least I can than go to the events and meet people afterwards..
 I should probably check my laptop before I dose back off. Mom and Dad won't like me skipping, but they'll still like me to check in.
  ->Choices2
-
 *[Well... I'm not really sure how to feel...] 
 I guess I'll go and see how Im feeling.. yeah might as well
-I should probably check my laptop before I go. Mom and Dad will probably want to check in before classes. ->Choices2
+I should probably check my laptop before I go. Mom and Dad will probably want to check in before classes.
+->Choices2
 
 ==Choices2==
 *[Get out of bed] -> END
