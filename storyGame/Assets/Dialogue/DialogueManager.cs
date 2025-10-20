@@ -42,6 +42,7 @@ public class DialogueManager : MonoBehaviour
 
 
     public int talkedto = 0;
+    public int end = 3;
     public GameObject endpanel;
     public GameObject bNerd;
     public GameObject bBB;
@@ -85,6 +86,8 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log(talkedto);
+
         if (!dialogueIsPlaying)
         {
             return;
@@ -95,39 +98,13 @@ public class DialogueManager : MonoBehaviour
             ContinueStory();
         }
 
-        if (talkedto == 3)
-        {
-            stopMovement.enabled = false;
-            endpanel.SetActive(true);
-
-
-            if (nhb == false)
-            {
-                bNerd.SetActive(true);
-            }
-           
-            if (jhb == false)
-            {
-                bJock.SetActive(true);
-            }
-
-            if (bbhb == false)
-            {
-               bBB.SetActive(true);
-            }
-
-            if (nhb == true && jhb == true && bbhb == true)
-            {
-                bFail.SetActive(true);
-            }
-
-}
-
+        
     }
+
+    
 
     public void EnterDialogueMode(TextAsset inkJSON)
     {
-        talkedto += 1;
         stopMovement.enabled = false;
         currentStory = new Story(inkJSON.text);
         dialogueIsPlaying = true;
@@ -150,10 +127,38 @@ public class DialogueManager : MonoBehaviour
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
         dialogueText.text = "";
+        talkedto += 1;
 
-    }
+        if (talkedto == end)
+        {
+            stopMovement.enabled = false;
+            endpanel.SetActive(true);
 
-    public void ContinueStory()
+
+        if (nhb == false)
+        {
+            bNerd.SetActive(true);
+        }
+
+        if (jhb == false)
+        {
+            bJock.SetActive(true);
+        }
+
+        if (bbhb == false)
+        {
+            bBB.SetActive(true);
+        }
+
+        if (nhb == true && jhb == true && bbhb == true)
+        {
+            bFail.SetActive(true);
+        }
+      }
+ 
+
+     }
+        public void ContinueStory()
     {
         if (currentStory.canContinue)
         {
@@ -224,8 +229,7 @@ public class DialogueManager : MonoBehaviour
 
         if (currentChoices.Count > choices.Length)
         {
-            Debug.LogError("More choices were given than the UI can support. Number of choices given: "
-                + currentChoices.Count);
+            Debug.LogError("number choices or something");
         }
 
         int index = 0;

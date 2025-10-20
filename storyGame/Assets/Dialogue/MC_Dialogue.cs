@@ -12,7 +12,6 @@ public class MC_Dialogue : MonoBehaviour
    void Start()
     {
         DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
-        Debug.Log("help???");
     }
 
 }
