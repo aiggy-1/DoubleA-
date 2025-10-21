@@ -1,21 +1,20 @@
 It's morning already?#speaker:MC
-Wow I can't believe its already time for my first day of classes.. I havent even unpacked everything yet haha!
-Im feeling..->Choices1
+Wow I can't believe its already time for my first day of classes.. I haven't even unpacked everything yet!
+Im feeling...->Choices1
 
 == Choices1 ==
 *[Excited! Im ready to go!]
- Thats right! Im gonna have a great day and nothings can ruin that!
- I should probably check my laptop before I go! Mom and Dad will probably want to check
+ That's right! I'm gonna have a great day and nothing can ruin that!
+ I should probably check my laptop before I go! Mom and Dad will want to check
  in before classes!
- ->Choices2
+ ->END
 *[Exhuasted, maybe I should skip the first day to sleep]
 ...Yeah I think I will sleep in least I can than go to the events and meet people afterwards..
 I should probably check my laptop before I dose back off. Mom and Dad won't like me skipping, but they'll still like me to check in.
- ->Choices2
+ ->END
 *[Well... I'm not really sure how to feel...] 
-I guess I'll go and see how Im feeling.. yeah might as well
-I should probably check my laptop before I go. Mom and Dad will probably want to check in before classes.
-->Choices2
+I guess I'll go and see how I'm feeling.. yeah might as well.
+I should probably check my laptop before I go. Mom and Dad will want to check in before classes.
+->END
 
-==Choices2==
-*[Get out of bed] -> END
+

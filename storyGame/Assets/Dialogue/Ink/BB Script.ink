@@ -1,13 +1,11 @@
-...
 Hey... #portrait:BB_Netural
-...
 What do you want?
-
 -> BB1
 
 ==BB1==
 *[Just wanted to introduce myself, hi!]
 Okay.. well you said hi.. go away now.
+...ugh
 -> Nextone
 
 *[You ain't tough]
@@ -15,17 +13,17 @@ Fuck off  #portrait:BB_Sad #error:BBHeartBreak
 -> END
 
 *[I saw your motorcycle, that's pretty cool, how long've you been riding?]
-Oh. um yeah thanks. As for how long I've been riding since.. uh I dunno, since highschool? Grade 11? #portrait:BB_Happy
+Oh. Um yeah thanks. As for how long I've been riding since.. uh I dunno, since highschool? Grade 11? #portrait:BB_Happy
 -> Nextone
 
 ==Nextone==
-Im Alejandro.. #speaker:Alejandro
+...Im Alejandro #speaker:Alejandro
 
 *[Thats a dumb name]
 Fuck off #portrait:BB_Sad #error:BBHeartBreak
 ->END
 
-*[Cool, I'll see you around]
+*[Cool, we should hang out sometime.. I'll see you around]
 Yeah..Cool #portrait:BB_Happy
 -> END
 
