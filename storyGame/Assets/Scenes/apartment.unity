@@ -3365,6 +3365,7 @@ GameObject:
   - component: {fileID: 1760473565492764553}
   - component: {fileID: 586036098025351133}
   - component: {fileID: 4637448796987609158}
+  - component: {fileID: 4637448796987609159}
   m_Layer: 0
   m_Name: DialogManager
   m_TagString: Untagged
@@ -3385,6 +3386,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MC_Dialogue
   inkJSON: {fileID: 4900000, guid: 6c22fac40fbaeee4aa3cc97fe8eb9620, type: 3}
+--- !u!114 &4637448796987609159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4637448796987609157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86aea798aeb65224caffb15ea1091fda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueManagerController
 --- !u!23 &4684647132049775816
 MeshRenderer:
   m_ObjectHideFlags: 0

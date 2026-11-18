@@ -5,7 +5,7 @@ using TMPro;
 using Ink.Runtime;
 using UnityEngine.EventSystems;
 
-public class DialogueManager : MonoBehaviour
+public class DialogueManager : Observer
 {
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TextMeshProUGUI dialogueText;
@@ -16,6 +16,7 @@ public class DialogueManager : MonoBehaviour
     private TextMeshProUGUI[] choicesText;
     private Story currentStory;
     public bool dialogueIsPlaying { get; private set; }
+    
 
     private static DialogueManager instance;
 
@@ -48,6 +49,9 @@ public class DialogueManager : MonoBehaviour
     public GameObject bBB;
     public GameObject bJock;
     public GameObject bFail;
+
+    private DialogueManagerController DMC;
+    private bool _isDialogueOn;
 
 
     private void Awake()
@@ -86,28 +90,28 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(talkedto);
-
-        if (!dialogueIsPlaying)
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            return;
+            if (!dialogueIsPlaying || _isDialogueOn)
+            {
+                return;
+            }
+            if (currentStory.currentChoices.Count == 0)
+            {
+                ContinueStory();
+            }
         }
-
-        if (currentStory.currentChoices.Count == 0 && Input.GetKeyDown(KeyCode.E))
-        {
-            ContinueStory();
-        }
-
-        
+    
     }
 
     
-
+   
     public void EnterDialogueMode(TextAsset inkJSON)
     {
         stopMovement.enabled = false;
         currentStory = new Story(inkJSON.text);
         dialogueIsPlaying = true;
+        DMC.
         dialoguePanel.SetActive(true);
         NameText.text = "???";
         portraitAnimator.Play("default");
@@ -262,5 +266,32 @@ public class DialogueManager : MonoBehaviour
         currentStory.ChooseChoiceIndex(choiceIndex);
         ContinueStory();
     }
+
+
+    public void IsDialogue()
+    {
+
+        if (!dialogueIsPlaying)
+        {
+            return;
+        }
+    }
+  
+
+    public override void Notify(Subject subject)
+    {
+        if (!DMC)
+        {
+            DMC = subject.GetComponent<DialogueManagerController>();
+        }
+
+        if(DMC)
+        {
+             _isDialogueOn = DMC.IsDialogueOn;
+        }
+
+    }
+
+
 
 }
